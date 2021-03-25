@@ -1,14 +1,19 @@
 class Pair:
-	def __init__(self,key,values):
-		self.key=key
-		if isinstance(values,list):self.values=values
-		else:self.values=[values]
-	def __getitem__(self,key):
-		if isinstance(key,int):return self.values[key]
-		if not isinstance(key,str):raise TypeError('__getitem__ in Pair: Key must be int or str!')
-		return[x for x in self.values if x.key==key]
-	def __delitem__(self,key):del self.values[key]
-	def __repr__(self):
-		if len(self.values)==0:return f"Pair(key={self.key})"
-		if len(self.values)==1:return f"Pair(key={self.key},value={self.values[0]})"
-		return f"Pair(key={self.key},values={self.values})"
+	def __init__(A,key,values):
+		B=values;A.key=key
+		if isinstance(B,list):A.values=B
+		else:A.values=[B]
+	def __getitem__(B,key):
+		A=key
+		if isinstance(A,int):return B.values[A]
+		if not isinstance(A,str):raise TypeError('__getitem__ in Pair: Key must be int or str!')
+		return[C for C in B.values if C.key==A]
+	def __delitem__(A,key):del A.values[key]
+	def __repr__(A):
+		if len(A.values)==0:return f"Pair(key={A.key})"
+		if len(A.values)==1:return f"Pair(key={A.key},value={A.values[0]})"
+		return f"Pair(key={A.key},values={A.values})"
+	@property
+	def value(self):return self.values[0]
+	@value.setter
+	def value(self,value):self.values[0]=value
