@@ -18,8 +18,8 @@ Value
 [Pair(key=SubKey,value=Value1),Pair(key=SubKey,value=Value2),Pair(key=SpecialSubKey,value=Value3)]
 >>> mySecondVar[0] #Returns Pair
 Pair(key=SubKey,value=Value1)
->>> mySecondVar['SubKey'] #Returns KeyList
+>>> mySecondVar['SubKey'] #Returns list
 [Pair(key=SubKey,value=Value1),Pair(key=SubKey,value=Value2)]
->>> mySecondVar['SpecialSubKey'] #Returns KeyList
+>>> mySecondVar['SpecialSubKey'] #Returns list
 [Pair(key=SpecialSubKey,value=Value3)]
 ```
