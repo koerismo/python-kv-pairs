@@ -23,5 +23,3 @@ Pair(key=SubKey,value=Value1)
 >>> mySecondVar['SpecialSubKey'] #Returns KeyList
 [Pair(key=SpecialSubKey,value=Value3)]
 ```
-### `KeyList`
-*An internal class used by `Pair` to properly handle tree operations.*
