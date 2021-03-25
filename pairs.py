@@ -4,10 +4,8 @@ class Pair:
     ''' A class to handle key/value pairs. '''
     def __init__(self, key, values):
         self.key = key
-        if isinstance(values, list):
-            self.values = values
-        else:
-            self.values = [values]
+        if isinstance(values, list):    self.values = values
+        else:                           self.values = [values]
 
     # Retrieve property from Pair
 
@@ -27,8 +25,15 @@ class Pair:
     # Represent Pair in string form
     
     def __repr__(self):
-        if len(self.values) == 0:
-            return f'Pair(key={self.key})'
-        if len(self.values) == 1:
-            return f'Pair(key={self.key},value={self.values[0]})'
+        if len(self.values) == 0:   return f'Pair(key={self.key})'
+        if len(self.values) == 1:   return f'Pair(key={self.key},value={self.values[0]})'
         return f'Pair(key={self.key},values={self.values})'
+
+    # Access values[0] with value
+
+    @property
+    def value(self):
+        return self.values[0]
+    @value.setter
+    def value(self,value):
+        self.values[0] = value
