@@ -27,7 +27,7 @@ class Pair(Generic[V]):
         if isinstance(key, int):
             del self.values[key]
         if not isinstance(key, str):
-            raise TypeError('__getitem__ in Pair: Key must be int or str!')
+            raise TypeError('__delitem__ in Pair: Key must be int or str!')
 
         for idx, x in enumerate(self.values):
             if isinstance(x, Pair) and x.key == key:
