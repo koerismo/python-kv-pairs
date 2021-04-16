@@ -1,5 +1,5 @@
 # python-kv-pairs
-A tiny class that allow key/value structures to be formed, accessed, and modified easily.
+A tiny class that allow key/value structures to be formed, accessed, and modified easily. Written for python 3.9+
 
 ![An image showing example usage](https://media.discordapp.net/attachments/307998594777219073/824446042736427019/unknown.png)
 

@@ -8,10 +8,8 @@ class Pair(Generic[V]):
     ''' A class to handle key/value pairs. '''
     def __init__(self, key: str, values: Union[V, List[V]]) -> None:
         self.key = key
-        if isinstance(values, list):
-            self.values = values
-        else:
-            self.values = [values]
+        if isinstance(values, list):    self.values = values
+        else:                           self.values = [values]
 
     # Retrieve property from Pair
 
@@ -38,11 +36,18 @@ class Pair(Generic[V]):
     # Represent Pair in string form
     
     def __repr__(self) -> str:
-        if len(self.values) == 0:
-            return f'Pair(key={self.key})'
-        if len(self.values) == 1:
-            return f'Pair(key={self.key},value={self.values[0]})'
+        if len(self.values) == 0:   return f'Pair(key={self.key})'
+        if len(self.values) == 1:   return f'Pair(key={self.key},value={self.values[0]})'
         return f'Pair(key={self.key},values={self.values})'
+
+    # Access values[0] with value
+
+    @property
+    def value(self) -> V:
+        return self.values[0]
+    @value.setter
+    def value(self,value: V):
+        self.values[0] = value
 
     key: str
     values: List[V]
